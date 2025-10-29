@@ -181,6 +181,7 @@
     height: 260px;
   }
 }
+
 .highlight {
   background: linear-gradient(90deg, var(--accent1), var(--accent2), #00e5ff, var(--accent1));
   background-size: 300% 100%;
@@ -194,8 +195,8 @@
   transition: all 0.4s ease;
   animation: gradientFlow 6s ease-in-out infinite;
 }
+/* 
 
-/* ✨ Animated underline (subtle) */
 .highlight::after {
   content: "";
   position: absolute;
@@ -215,7 +216,6 @@
   transform-origin: left;
 }
 
-/* 🌈 Gradient Animation */
 @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;
@@ -228,11 +228,10 @@
   }
 }
 
-/* 🌙 Optional: Adapt to dark theme */
 @media (prefers-color-scheme: dark) {
   .highlight {
     background: linear-gradient(90deg, #c084fc, #22d3ee, #60a5fa, #c084fc);
     background-size: 300% 100%;
     animation: gradientFlow 6s ease-in-out infinite;
   }
-}
+} */
