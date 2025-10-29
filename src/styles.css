@@ -156,3 +156,12 @@ body {
     margin-bottom: 0.5rem;
   }
 }
+
+[data-aos] {
+  transition-property: transform, opacity !important;
+}
+
+.about-card, .edu-card, .certificate-card {
+  will-change: transform, opacity;
+}
+

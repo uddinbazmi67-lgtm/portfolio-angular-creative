@@ -1,26 +1,126 @@
-form {
-  max-width: 500px;
-  margin: 20px auto 0;
+.contact-modern {
+  text-align: center;
+  margin: 100px 0;
 }
 
-.form-group {
-  margin-bottom: 16px;
+.contact-subtitle {
+  font-size: 1.05rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
-input,
-textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--radius);
-  font-size: 1rem;
-  font-family: inherit;
-  transition: 0.3s;
+/* === Grid Layout === */
+.contact-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 20px;
 }
 
-input:focus,
-textarea:focus {
-  border-color: var(--accent1);
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+/* === Contact Card (Glassmorphism Style) === */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+  text-align: left;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Glow + Lift Effect */
+.contact-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.2);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(6, 182, 212, 0.12));
+}
+
+/* === Icon Styling === */
+.contact-item .icon {
+  font-size: 1.9rem;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex-shrink: 0;
+}
+
+/* WhatsApp special color */
+.whatsapp-icon {
+  background: linear-gradient(90deg, #25d366, #128c7e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Text Section === */
+.contact-item h4 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--accent1);
+  font-weight: 600;
+}
+
+.contact-item a,
+.contact-item p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--accent2);
+}
+
+/* === Make Whole Card Clickable for Links === */
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-link:hover {
+  text-decoration: none;
+}
+
+/* === Animation: fade up on entry === */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-item {
+  animation: fadeUp 0.6s ease both;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 18px;
+  }
+
+  .contact-item .icon {
+    font-size: 1.6rem;
+  }
 }
