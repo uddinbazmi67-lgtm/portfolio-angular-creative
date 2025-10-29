@@ -1,0 +1,26 @@
+form {
+  max-width: 500px;
+  margin: 20px auto 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent1);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
