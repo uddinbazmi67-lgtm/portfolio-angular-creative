@@ -181,29 +181,33 @@
     height: 260px;
   }
 }
-
 .highlight {
-  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), #00e5ff, var(--accent1));
+  background-size: 300% 100%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* standard */
-  color: transparent; /* fallback fix */
+  color: transparent;
+  display: inline-block;
   font-weight: 800;
-  display: inline-block; /* ensures correct rendering */
   position: relative;
   transition: all 0.4s ease;
+  animation: gradientFlow 6s ease-in-out infinite;
 }
+
+/* ✨ Animated underline (subtle) */
 .highlight::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  background: linear-gradient(90deg, var(--accent1), var(--accent2), #00e5ff);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
+  opacity: 0.8;
 }
 
 .highlight:hover::after {
@@ -211,12 +215,24 @@
   transform-origin: left;
 }
 
-/* === Optional: Light/Dark Mode Friendly === */
+/* 🌈 Gradient Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🌙 Optional: Adapt to dark theme */
 @media (prefers-color-scheme: dark) {
   .highlight {
-    background: linear-gradient(90deg, #c084fc, #22d3ee);
-  }
-  .highlight::after {
-    background: linear-gradient(90deg, #c084fc, #22d3ee);
+    background: linear-gradient(90deg, #c084fc, #22d3ee, #60a5fa, #c084fc);
+    background-size: 300% 100%;
+    animation: gradientFlow 6s ease-in-out infinite;
   }
 }
