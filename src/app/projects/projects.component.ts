@@ -1,12 +1,4 @@
-// import { Component } from '@angular/core';
-// @Component({selector:'app-projects',templateUrl:'./projects.component.html',styleUrls:['./projects.component.css']})
-// export class ProjectsComponent {
-//   projects = [
-//     { title: 'Portfolio Redesign', desc: 'A modern, responsive portfolio built with Angular.', link: '#' },
-//     { title: 'HRMS Dashboard', desc: 'Employee management and leave policies dashboard.', link: '#' }
-//   ];
-// }
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -14,21 +6,54 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+  selectedFilter = 'all';
+  activeProject: any = null;
+
   projects = [
     {
-      name: 'Automatic Email System',
-      description: 'Designed and implemented an automated email and notification system with Angular and PHP (CodeIgniter).',
-      link: '#'
+      name: "Dynamic HRMS Management System",
+      category: "angular",
+      image: "assets/hrmAutomationIcon.webp",
+      description: "A comprehensive HRMS platform automating attendance, payroll, leave, and performance tracking. Built with Angular and PHP (CodeIgniter), it offers real-time synchronization across departments, dynamic policy configuration, and analytics-driven insights.",
+      techStack: ["Angular", "PHP", "MySQL", "CodeIgniter"]
     },
     {
-      name: 'Leave Management System',
-      description: 'Built dynamic UAE leave policy logic and real-time calculations using Angular and MySQL.',
-      link: '#'
+      name: "UbiCRM — Customer Relationship Management",
+      category: "angular",
+      image: "assets/crms.jpg",
+      description: "A CRM system for managing leads, deals, and analytics with a secure multi-tenant architecture and interactive dashboards.",
+      techStack: ["Angular 17", "AdonisJS", "MySQL", "Highcharts.js"]
     },
     {
-      name: 'Portfolio Website',
-      description: 'A creative and responsive personal portfolio built with Angular 15 and Bootstrap 5.',
-      link: '#'
+      name: "Organization Management System",
+      category: "react",
+      image: "assets/org.png",
+      description: "A modular React-based platform for onboarding, subscription management, and workflow automation, improving admin efficiency by 30%.",
+      techStack: ["React", "Node.js", "MongoDB"]
     }
   ];
+
+  get filteredProjects() {
+    if (this.selectedFilter === 'all') return this.projects;
+    return this.projects.filter(p => p.category === this.selectedFilter);
+  }
+
+  filterProjects(category: string) {
+    this.selectedFilter = category;
+  }
+
+  openPopup(project: any) {
+    this.activeProject = project;
+  }
+
+  closeModal(event?: any) {
+    if (!event || event.target.classList.contains('modal-backdrop')) {
+      this.activeProject = null;
+    }
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscKey() {
+    this.activeProject = null;
+  }
 }
