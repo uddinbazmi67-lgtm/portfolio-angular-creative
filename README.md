@@ -23,17 +23,6 @@ This portfolio is a **dynamic and responsive web application** built using **Ang
 
 The potfolio has sections of home, about, education, portfolio projects and contact information. Key features are its dynamic content, the responsive design and modern aesthetics.
 
-## Technologies Used
-
-# - **Angular 19** - Latest version with standalone components.
-# - **TypeScript 5.8** - Strongly typed JavaScript superset.
-# - **Angular Material 19** - Material Design components.
-# - **Bootstrap 5** - Responsive CSS framework.
-# - **Bootstrap Icons** - Clean SVG icons.
-# - **Angular CLI 19** - Official build tooling.
-# - **RxJS 7** - Reactive programming library.
-# - **Vite** - Next-gen frontend tooling (via Angular CLI).
-# - **Vercel** - Cloud platform for static sites.
 
 ## Development server
 
