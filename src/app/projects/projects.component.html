@@ -12,21 +12,25 @@
   <div class="portfolio-grid">
     <div class="portfolio-item" *ngFor="let project of filteredProjects" (click)="openPopup(project)">
       <img [src]="project.image" alt="{{ project.name }}" />
-      <div class="overlay">
+      
+      <!-- Slide-up info bar -->
+      <div class="project-info">
         <h3>{{ project.name }}</h3>
+        <p>{{ project.description | slice:0:50 }}...</p>
       </div>
     </div>
   </div>
 
- <!-- Modal -->
-<div class="modal-backdrop" *ngIf="activeProject" (click)="closeModal($event)">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <span class="close" (click)="closeModal()">×</span>
-    <img [src]="activeProject.image" alt="{{ activeProject.name }}" />
-    <h2>{{ activeProject.name }}</h2>
-    <p>{{ activeProject.description }}</p>
-    <div class="tech-stack">
-      <span *ngFor="let tech of activeProject.techStack">{{ tech }}</span>
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="activeProject" (click)="closeModal($event)">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close" (click)="closeModal()">×</span>
+      <img [src]="activeProject.image" alt="{{ activeProject.name }}" />
+      <h2>{{ activeProject.name }}</h2>
+      <p>{{ activeProject.description }}</p>
+      <div class="tech-stack">
+        <span *ngFor="let tech of activeProject.techStack">{{ tech }}</span>
+      </div>
     </div>
   </div>
 </div>

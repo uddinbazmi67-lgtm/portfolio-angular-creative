@@ -7,6 +7,17 @@
   --text-dark: #1b1b1b;
   --radius: 12px;
 }
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent2), #adb5bd);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
 
 body {
   font-family: "Inter", Arial, sans-serif;

@@ -19,18 +19,26 @@ export class ProjectsComponent {
     },
     {
       name: "UbiCRM — Customer Relationship Management",
-      category: "angular",
+      category: "react",
       image: "assets/crms.jpg",
-      description: "A CRM system for managing leads, deals, and analytics with a secure multi-tenant architecture and interactive dashboards.",
-      techStack: ["Angular 17", "AdonisJS", "MySQL", "Highcharts.js"]
+      description: "A full-stack solution to manage leads, prospects, and client interactions. The system includes dynamic dashboards for real-time pipeline tracking, automated client reporting, and performance analytics modules, significantly improving sales productivity and conversion efficiency across multiple teams.",
+      techStack: ["ReactJS", "AdonisJS", "MySQL", "Highcharts.js"]
     },
     {
       name: "Organization Management System",
-      category: "react",
+      category: "angular",
       image: "assets/org.png",
-      description: "A modular React-based platform for onboarding, subscription management, and workflow automation, improving admin efficiency by 30%.",
-      techStack: ["React", "Node.js", "MongoDB"]
-    }
+      description: "Developed a modular platform serving over 3,000 organizations, optimizing approval and renewal workflows to boost administrative efficiency by 30%. Integrated automated notifications and approval mechanisms to minimize manual effort and enhance overall operational productivity.",
+      techStack: ["Angular js", "PHP", "MySQL"]
+    },
+    {
+      name: "Rule-Based Payroll Deduction Engine",
+      category: "angular",
+      image: "assets/penalty.png",
+      description: "Built a configurable payroll engine that applies deductions based on attendance irregularities and late entries. Introduced a policy management interface allowing HR teams to define rules without technical support, reducing manual intervention and enhancing system scalability and maintainability.",
+      techStack: ["Angular", "PHP", "MySQL"]
+    },
+    
   ];
 
   get filteredProjects() {
